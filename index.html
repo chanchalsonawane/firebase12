@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+
+<html Lang="en" ng-app="chatApp">
+<head>
+    <meta charset="UTF-8">
+    <title>FIREBASE CHAT </title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAeTYaVAbjDwGp_Ucvp-FVTzuhEow5_ZNY",
+    authDomain: "fir-chat-71391.firebaseapp.com",
+    databaseURL: "https://fir-chat-71391.firebaseio.com",
+    projectId: "fir-chat-71391",
+    storageBucket: "fir-chat-71391.appspot.com",
+    messagingSenderId: "622182600009"
+  };
+  firebase.initializeApp(config);
+</script> 
+ 
+    <script src="app.js"></script>
+   <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body ng-controller="ChatController">
+    <br>
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">WEB BASED FIREBASE  FRIENDLY CHAT APPLICATION</div>
+                <div class="panel-body">
+                <p ng-repeat ="m in messgaes">{{m.message}}.{{ m.date | date:'medium'}}</p>
+              
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Message here....." ng-model="messageText">
+                </div>
+                <button type="submit" class="btn" btn-default ng-click="send()">Send</button>
+            </div>
+            </div>
+        </div>
+    </body>
+    </html>
+ 
+
+
+
